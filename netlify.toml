@@ -1,0 +1,160 @@
+# Netlify configuration for DPRdata.com
+# Fixes Google Search Console indexing issues:
+# 1. 404 handling with custom page
+# 2. www enforcement (non-www → www redirect)
+# 3. .html extension removal (prevents duplicate content)
+
+[build]
+  publish = "."
+
+# Force HTTPS and www
+[[redirects]]
+  from = "https://dprdata.com/*"
+  to = "https://www.dprdata.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://dprdata.com/*"
+  to = "https://www.dprdata.com/:splat"
+  status = 301
+  force = true
+
+# Redirect .html extensions to clean URLs (prevents duplicate content / alternate canonical issues)
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/waitlist-model.html"
+  to = "/waitlist-model"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/competitive-model.html"
+  to = "/competitive-model"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/no-replacement-for-barcroft.html"
+  to = "/no-replacement-for-barcroft"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/declining-participation.html"
+  to = "/declining-participation"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/survey-analysis.html"
+  to = "/survey-analysis"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/space-usage.html"
+  to = "/space-usage"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cost-recovery-decline.html"
+  to = "/cost-recovery-decline"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/254k-gap.html"
+  to = "/254k-gap"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cost-recovery-paradox.html"
+  to = "/cost-recovery-paradox"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/competitive-fee-fix.html"
+  to = "/competitive-fee-fix"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/summary-table.html"
+  to = "/summary-table"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/did-dpr-present-full-picture.html"
+  to = "/did-dpr-present-full-picture"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/was-this-crisis-self-inflicted.html"
+  to = "/was-this-crisis-self-inflicted"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/were-all-solutions-explored.html"
+  to = "/were-all-solutions-explored"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/what-were-asking-the-board.html"
+  to = "/what-were-asking-the-board"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/board-accountability-tracker.html"
+  to = "/board-accountability-tracker"
+  status = 301
+  force = true
+
+# Block share-card.html from being served (utility page, not content)
+[[redirects]]
+  from = "/share-card.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/share-card"
+  to = "/"
+  status = 301
+  force = true
+
+# Custom headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"
+
+[[headers]]
+  for = "/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

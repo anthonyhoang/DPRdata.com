@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1200">
+<meta name="robots" content="noindex, nofollow">
+<title>DPRData.com — Share Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    background: #0F1B33;
+    color: #fff;
+  }
+  .card {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 80px;
+    overflow: hidden;
+  }
+
+  /* Subtle background texture */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(198,40,40,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 50%, rgba(249,168,37,0.06) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  /* Gold accent bar at top */
+  .accent-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #C62828, #F9A825, #2E7D32);
+  }
+
+  .content { position: relative; z-index: 1; text-align: center; }
+
+  /* DPRData.com brand lockup */
+  .brand-lockup {
+    margin-bottom: 20px;
+  }
+  .brand-name {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+  .brand-name .brand-dpr { color: #F9A825; }
+  .brand-name .brand-data { color: #C62828; }
+  .brand-name .brand-dot { color: rgba(255,255,255,0.5); }
+
+  .badge {
+    background: #C62828;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 22px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 22px;
+  }
+
+  .main-title {
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .em-gold { color: #F9A825; }
+  .em-white { color: rgba(255,255,255,0.5); font-weight: 400; }
+
+  .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.4;
+  }
+
+  .findings {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  .finding {
+    flex: 1;
+    text-align: left;
+    padding: 12px 16px;
+    border-radius: 10px;
+    border-left: 4px solid;
+    position: relative;
+    overflow: hidden;
+  }
+  .finding:nth-child(1) {
+    border-color: #C62828;
+    background: rgba(198,40,40,0.12);
+  }
+  .finding:nth-child(2) {
+    border-color: #F9A825;
+    background: rgba(249,168,37,0.1);
+  }
+  .finding:nth-child(3) {
+    border-color: #2E7D32;
+    background: rgba(46,125,50,0.12);
+  }
+  .finding-num {
+    font-size: 40px;
+    font-weight: 900;
+    opacity: 0.15;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+    line-height: 1;
+  }
+  .finding:nth-child(1) .finding-num { color: #C62828; }
+  .finding:nth-child(2) .finding-num { color: #F9A825; }
+  .finding:nth-child(3) .finding-num { color: #2E7D32; }
+  .finding-label {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .finding:nth-child(1) .finding-label { color: #C62828; }
+  .finding:nth-child(2) .finding-label { color: #F9A825; }
+  .finding:nth-child(3) .finding-label { color: #2E7D32; }
+  .finding-text {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: rgba(255,255,255,0.92);
+    position: relative;
+    z-index: 1;
+  }
+
+  .footer-bar {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 50px;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+  }
+  .footer-url {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .footer-url .f-dpr { color: #F9A825; }
+  .footer-url .f-data { color: #C62828; }
+  .footer-url .f-dot { color: rgba(255,255,255,0.5); }
+  .footer-cta {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="accent-top"></div>
+  <div class="content">
+    <div class="brand-lockup">
+      <div class="brand-name"><span class="brand-dpr">DPR</span><span class="brand-data">Data</span><span class="brand-dot">.com</span></div>
+    </div>
+    <div class="badge">ARLINGTON COUNTY &bull; MARCH 5, 2026 WORK SESSION</div>
+    <div class="main-title">DPR's March 5 Slides <span class="em-white">vs.</span><br><span class="em-gold">The Full Picture</span></div>
+    <div class="subtitle">What the Arlington County Board didn't see in DPR's gymnastics presentation.</div>
+    <div class="findings">
+      <div class="finding">
+        <div class="finding-num">01</div>
+        <div class="finding-label">Finding 01</div>
+        <div class="finding-text">DPR manufactured the crisis.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-num">02</div>
+        <div class="finding-label">Finding 02</div>
+        <div class="finding-text">The Board was presented incomplete data.</div>
+      </div>
+      <div class="finding">
+        <div class="finding-num">03</div>
+        <div class="finding-label">Finding 03</div>
+        <div class="finding-text">There are solutions DPR never tried.</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bar">
+    <div class="footer-url"><span class="f-dpr">DPR</span><span class="f-data">Data</span><span class="f-dot">.com</span></div>
+    <div class="footer-cta">Save Arlington Gymnastics Coalition</div>
+  </div>
+</div>
+</body>
+</html>

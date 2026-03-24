@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /share-card.html
+Disallow: /share-card
+
+Sitemap: https://www.dprdata.com/sitemap.xml
