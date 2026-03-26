@@ -105,7 +105,7 @@
   /* ===== SLIDE CONTAINER ===== */
   .slide {
     position: absolute;
-    top: 36px; left: 0;
+    top: 68px; left: 0;
     width: 100vw; height: 100vh;
     display: none;
     flex-direction: column;
@@ -852,7 +852,7 @@
 
   .progress-bar {
     position: fixed;
-    top: 36px; left: 0;
+    top: 68px; left: 0;
     height: 3px;
     background: var(--gold);
     z-index: 160;
@@ -2212,9 +2212,33 @@
     scrollbar-color: rgba(255,255,255,0.2) rgba(255,255,255,0.05);
   }
 
+  /* ===== ANNOUNCEMENT BAR ===== */
+  @keyframes announcePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+  .announce-bar { position:fixed; top:36px; left:0; right:0; z-index:149; background:linear-gradient(90deg, #F9A825, #FFD54F, #F9A825); border-bottom:2px solid rgba(0,0,0,0.15); padding:0.4rem 1rem; overflow-x:auto; white-space:nowrap; text-align:center; box-shadow:0 2px 12px rgba(249,168,37,0.3); }
+  .announce-bar .announce-inner { display:inline-flex; align-items:center; gap:0.5rem; font-family:'Inter','Poppins',sans-serif; font-size:0.75rem; }
+  .announce-bar a { display:inline-flex; align-items:center; gap:0.4rem; color:#1a1a2e; text-decoration:none; font-weight:600; transition:opacity 0.2s; }
+  .announce-bar a:hover { opacity:0.7; }
+  .announce-bar .announce-icon { animation: announcePulse 2s ease-in-out infinite; font-size:0.85rem; }
+  .announce-bar .announce-new { background:#E53935; color:#fff; font-size:0.55rem; font-weight:800; padding:0.15rem 0.45rem; border-radius:3px; letter-spacing:0.5px; animation: announcePulse 1.5s ease-in-out infinite; }
+  .announce-bar .announce-arrow { font-weight:800; margin-left:0.15rem; }
 </style>
 </head>
 <body>
+
+<!-- ===== ANNOUNCEMENT BAR ===== -->
+<div class="announce-bar">
+  <div class="announce-inner">
+    <a href="https://savearlingtongymnastics.com/tool" target="_blank">
+      <span class="announce-new">NEW APP</span>
+      <span class="announce-icon">&#128736;</span>
+      <span><strong>Board Scenario Planner</strong> &mdash; 50+ community solutions, modeled in real time</span>
+      <span class="announce-arrow">&rarr;</span>
+    </a>
+  </div>
+</div>
 
 <!-- ===== SCREENSHOT TITLE BAR ===== -->
 <div class="screenshot-bar">
