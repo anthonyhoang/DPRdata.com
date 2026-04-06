@@ -3614,6 +3614,22 @@ function closeDataModal() {
   var modals = document.querySelectorAll('.data-modal');
   modals.forEach(function(m) { m.classList.remove('open'); });
 }
+
+// Hash-based deep linking: dprdata.com/#slide16 navigates to slide 16
+(function() {
+  function handleHash() {
+    var hash = window.location.hash;
+    var match = hash.match(/^#slide(\d+)$/);
+    if (match) {
+      var slideNum = parseInt(match[1], 10);
+      goSlide(slideNum);
+    }
+  }
+  // Navigate on initial load
+  window.addEventListener('load', handleHash);
+  // Navigate when hash changes (e.g. user shares link while page is open)
+  window.addEventListener('hashchange', handleHash);
+})();
 </script>
 
 
